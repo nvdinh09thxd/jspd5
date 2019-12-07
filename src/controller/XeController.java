@@ -35,8 +35,8 @@ public class XeController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String[] arXe = request.getParameterValues("loaixe");
-//		System.out.println(arXe.length);
-//		System.out.println(Arrays.toString(arXe));
+		System.out.println(arXe.length);
+		System.out.println(Arrays.toString(arXe));
 		int dem = 0;
 		int number = 0;
 		for (String objXe : arXe) {
