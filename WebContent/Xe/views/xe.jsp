@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Quản lý xe</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/templates/css/bootstrap.min.css">
+<title>Quản lý loại xe</title>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/Xe/templates/css/bootstrap.min.css">
 <script src="<%=request.getContextPath() %>/Xe/templates/js/jquery.min.js"></script>
 <script src="<%=request.getContextPath() %>/Xe/templates/js/bootstrap.min.js"></script>
 <style type="text/css">
@@ -53,7 +53,6 @@
 					
 					<%
 					if(request.getAttribute("listXe")!=null){
-						@SuppressWarnings("unchecked")
 						ArrayList<Xe> listXe = (ArrayList<Xe>) request.getAttribute("listXe");
 						if(listXe.size()>0){
 							for(Xe objXe: listXe){
@@ -63,12 +62,14 @@
 						<td><%=objXe.getName() %></td>
 						<td>
 							<span><%=objXe.getSort() %></span>
-							<input type="number" name="loaixe" />
+							<input type="number" name="loaixe" value=""/>
+							<input type="hidden" name="idxe" value="<%=objXe.getId() %>"/>
 						</td>
 					</tr>
 					<%
 					}}}
 					%>
+					
 					<tr> 
 						<td colspan="3">
 							<button type="submit" class="btn btn-default" style="width: 100%">Cập nhật sắp xếp</button>

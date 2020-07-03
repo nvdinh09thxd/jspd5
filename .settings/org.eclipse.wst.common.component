@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="JSPD5_Dinh">
+    <wb-module deploy-name="JSPD5">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="JSPD5_Dinh"/>
-        <property name="java-output-path" value="/JSPD5_Dinh/build/classes"/>
+        <property name="java-output-path" value="/JSPD5/build/classes"/>
+        <property name="context-root" value="JSPD5"/>
     </wb-module>
 </project-modules>
