@@ -42,26 +42,30 @@ public class BaiHatController extends HttpServlet {
 		request.setAttribute("id", idStr);
 		request.setAttribute("name", name);
 		if ("".equals(idStr) || "".equals(name)) {
-			request.getRequestDispatcher("/baitaplop/add.jsp?err=0").forward(request, response);
+			request.setAttribute("err", "Vui lòng nhập dữ liệu đầy đủ vào!");
+			request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 			return;
 		}
 		try {
 			int id = Integer.parseInt(idStr);
 			for (BaiHat song : arSongs) {
 				if (song.getId() == id) {
-					request.getRequestDispatcher("/baitaplop/add.jsp?err=3").forward(request, response);
+					request.setAttribute("err", "ID bài hát đã tồn tại!");
+					request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 					return;
 				}
 			}
 			Part filePart = request.getPart("picture");
 			String fileName = filePart.getSubmittedFileName();
 			if("".equals(fileName)) {
-				request.getRequestDispatcher("/baitaplop/add.jsp?err=4").forward(request, response);
+				request.setAttribute("err", "Vui lòng chọn hình ảnh!");
+				request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 				return;
 			}
 			String fileType = filePart.getContentType();
 			if (!fileType.startsWith("image")) {
-				request.getRequestDispatcher("/baitaplop/add.jsp?err=1").forward(request, response);
+				request.setAttribute("err", "File bạn chọn không phải là file ảnh!");
+				request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 				return;
 			}
 			String contextRoot = request.getServletContext().getRealPath("");
@@ -81,7 +85,8 @@ public class BaiHatController extends HttpServlet {
 			session.setAttribute("arSongs", arSongs);
 			response.sendRedirect(request.getContextPath() + "/baitaplop/index.jsp");
 		} catch (NumberFormatException e) {
-			request.getRequestDispatcher("/baitaplop/add.jsp?err=2").forward(request, response);
+			request.setAttribute("err", "Nhập sai định dạng số!");
+			request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 		}
 	}
 
