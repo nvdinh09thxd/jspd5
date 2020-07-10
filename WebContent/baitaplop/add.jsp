@@ -8,7 +8,7 @@
 		<link href="<%=request.getContextPath() %>/baitaplop/style.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
-		<form action="<%=request.getContextPath() %>/BaiHatController" method="post" enctype="multipart/form-data">
+		<form action="<%=request.getContextPath() %>/add-song" method="post" enctype="multipart/form-data">
 			<table>
 			  <tbody>
 				<tr>

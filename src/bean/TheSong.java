@@ -1,6 +1,6 @@
-package model.bean;
+package bean;
 
-public class BaiHat {
+public class TheSong {
 	private int id;
 	private String name;
 	private String picture;
@@ -29,14 +29,14 @@ public class BaiHat {
 		this.picture = picture;
 	}
 
-	public BaiHat(int id, String name, String picture) {
+	public TheSong(int id, String name, String picture) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.picture = picture;
 	}
 
-	public BaiHat() {
+	public TheSong() {
 		super();
 	}
 
