@@ -56,17 +56,17 @@ public class AddSongController extends HttpServlet {
 			request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 			return;
 		}
-		if ("".equals(name)) {
-			request.setAttribute("err", "Vui lòng nhập tên bài hát!");
-			request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
-			return;
-		}
 		for (TheSong song : arSongs) {
 			if (song.getId() == id) {
 				request.setAttribute("err", "ID bài hát đã tồn tại!");
 				request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
 				return;
 			}
+		}
+		if ("".equals(name)) {
+			request.setAttribute("err", "Vui lòng nhập tên bài hát!");
+			request.getRequestDispatcher("/baitaplop/add.jsp").forward(request, response);
+			return;
 		}
 		Part filePart = request.getPart("picture");
 		String fileName = filePart.getSubmittedFileName();
