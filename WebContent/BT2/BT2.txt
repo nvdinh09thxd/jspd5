@@ -1,0 +1,17 @@
+﻿a) Liệt kê các thương hiệu cà phê:
+SELECT ThuongHieu FROM cafe;
+
+b) Liệt kê các thương hiệu cà phê có chứa từ "Phương"
+SELECT ThuongHieu FROM cafe WHERE ThuongHieu LIKE "%Phương%"
+
+c) Liệt kê các thương hiệu cà phê có ID_Cafe > 2 và < 4 hoặc có chứa từ "Long"
+SELECT ThuongHieu FROM cafe WHERE ID_Cafe > 2 AND ID_Cafe < 4 OR ThuongHieu LIKE "%Long%"
+
+d) Sửa ThuongHieu "Phương Vi" thành "Kim Trung"
+UPDATE cafe SET ThuongHieu = "Kim Trung" WHERE ThuongHieu = "Phương Vi"
+
+e) Xóa cafe có ID_Cafe = 3;
+DELETE FROM cafe WHERE ID_Cafe = 3
+
+f) Đếm xem có bao nhiêu cafe mà MoTa chứa "on" hoặc ThuongHieu chứa "Nguyên"
+SELECT COUNT(*) FROM cafe WHERE MoTa LIKE "%on%" OR ThuongHieu LIKE "%Nguyên%"
