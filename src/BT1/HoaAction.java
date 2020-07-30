@@ -86,7 +86,7 @@ public class HoaAction {
 		return result;
 	}
 
-	public static ArrayList<Hoa> GiaBeHon10(ArrayList<Hoa> listHoa) {
+	public static ArrayList<Hoa> GiaBeHon10000(ArrayList<Hoa> listHoa) {
 		ArrayList<Hoa> result = new ArrayList<>();
 		for (Hoa hoa : listHoa) {
 			if (hoa.getGiaBan() < 10000) {

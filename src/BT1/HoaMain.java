@@ -21,8 +21,8 @@ public class HoaMain {
 				HoaAction.display(listHoaSoLuongLonHon10, "DANH SÁCH HOA CÓ SỐ LƯỢNG LỚN HƠN 10");
 				break;
 			case 4:
-				ArrayList<Hoa> listHoaGiaBeHon10 = HoaAction.GiaBeHon10(listHoa);
-				HoaAction.display(listHoaGiaBeHon10, "DANH SÁCH HOA CÓ GIÁ BÉ HƠN 10.000");
+				ArrayList<Hoa> listHoaGiaBeHon10000 = HoaAction.GiaBeHon10000(listHoa);
+				HoaAction.display(listHoaGiaBeHon10000, "DANH SÁCH HOA CÓ GIÁ BÉ HƠN 10.000");
 				break;
 			case 5:
 				chon = 5;
